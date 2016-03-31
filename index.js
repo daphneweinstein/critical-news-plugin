@@ -22,6 +22,7 @@ function dummy(text, callback) {
   callback(text);
 }
 
+exports.dummy = dummy;
 
 //taken from page 
 AWS.config.update({accessKeyId: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjgD08K/C2L8T7k1TYktB
@@ -93,8 +94,3 @@ s3.putObject(params, function(err, data) {
 	if (err) console.log(err, err.stack); // an error occurred
 	else     console.log(data);           // successful response
     });
-
-
-
-
-exports.dummy = dummy;
