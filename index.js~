@@ -17,7 +17,7 @@ var button = buttons.ActionButton({
 function handleClick(state) {
   tabs.open("http://www.mozilla.org/");
 }
-//ZOMGsocool
+
 function dummy(text, callback) {
   callback(text);
 }
