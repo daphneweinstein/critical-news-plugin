@@ -1,6 +1,5 @@
 
 var self = require("sdk/self");
-var AWS = require('aws-sdk');
 
 var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
@@ -26,27 +25,19 @@ function dummy(text, callback) {
 
 exports.dummy = dummy;
 
-//taken from page 
-AWS.config.update({accessKeyId: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjgD08K/C2L8T7k1TYktBHvWmPJl+g8Q7TlmFnGdN7+EBygrj6VE5w86lprd9CaE8V1JkcQP23d5HG8mskfujYkWqTcTIAOZHsscd78YLHq9nxJIy3FXjFDJX8ArQO8MD1h7aAetizIg2QNNHT6IUu/O/ineVMSCjJd2rGz9XytGL2fS6LJch727ldO4orfR9Q0qmYHdjfr7t4s/A2LfBV8NY4ToPrPA010faekSvxOOmHQenmSD4ALdsVSRlBS5OxP0WRVFfmNl0/FksEnl2I7rVRhhSI7rjdS+IfL5ANNCKfhxQiRbkgDkyr24jCGa8Pb0Leia/ODoFAk1rurUlBwIDAQAB', secretAccessKey: 'MIIEogIBAAKCAQEAjgD08K/C2L8T7k1TYktBHvWmPJl+g8Q7TlmFnGdN7+EBygrj6VE5w86lprd9CaE8V1JkcQP23d5HG8mskfujYkWqTcTIAOZHsscd78YLHq9nxJIy3FXjFDJX8ArQO8MD1h7aAetizIg2QNNHT6IUu/O/ineVMSCjJd2rGz9XytGL2fS6LJch727ldO4orfR9Q0qmYHdjfr7t4s/A2LfBV8NY4ToPrPA010faekSvxOOmHQenmSD4ALdsVSRlBS5OxP0WRVFfmNl0/FksEnl2I7rVRhhSI7rjdS+IfL5ANNCKfhxQiRbkgDkyr24jCGa8Pb0Leia/ODoFAk1rurUlBwIDAQABAoIBAD9ti/rJ9xVLXAKwRVN9W6wRe1xMD2eZyge4EucGeZhw/5SYgq6fmlaswe8SvGYFv+cdJUIZzDXT6B0wWsWmCZeGmIg+IjvMoC/poqSL6EGfhZEW4GLsdg56Yi8VFWfsNpV4mFYNJsdG/Dy+YnbeZbaCLIcT3O7hrh3mwlvcUkGD4rDyEk7Vt8KbJWyKs2hBK1A55yldLH7XcczCbwHVQljkrxbN8r06iPpuK6dvSg6K4XOtfGfgUR/Y8GSz5QqRgfZjyn8firZqc1h61U2+1ahgpqn7qDwWGZ5oLyYhH5kzaf7E55FtHwUBFs2AtbKjYptnmY4ivj9tlKvOrbl2RGECgYEA8GFtOJRmL6HyWAM1WWiKfZeCVW81hbcKdQ/eUxNr3oHvxR4j4YIpFlroYCKA6oAE/4JvwYDIgVDaNHJiLWg6ywDVcE9UBYie+ipmO8GwTCackj8QbyFNgOulY8vyx/+1qT7627htdNO87x+cvvc9lbLYlK428Ln+6sH/wRO53pcCgYEAlzsYj8e2dIaIXfpJa/Xad28Uaf7IhLEmxpFMku1NvQ3tUsoMK8cxcTCnuwI8kIcf1ogh9aHbw9PVNJ5BKCx0xhUaaLE+KhQZ5aKk8RAGo8GCAEurZ1qPIG+nxrGdTkMolPyAXZxrnu6bfHZG/JTR5Z6cdvTTtGnJNBKSRL4WKxECgYEA7LhVEeH6W7AU8x19vSWZNKMuo6nXwG2IK83LuG4ozT+SesD6vsoqYix2KK3x3Hzj7ydpnNqRGeAgcoOuMV8yftW8W1STvrtTK7LzaKeOUP+5MsBOE9Js+6eUARpIZTJpmFlAO358tA8MQUQVXW4nRLOSW6DQ0/Gmm1Me5OnjIdMCfzgetf6lHhAf3HsDZjuqAGhR0EGFSuPy2XDWepQLe82sXWVblSipwq8+XwAG1HLNsgLqga+lYOhKs9PS5lsCJFNdgW9YVrlGvFV7BbpvOAeMx7FUY0b3VCW1SY1yW+2u/mBLU1dptIZGBW0qdy1EDKApO+bo86b/mqq4OY9I+vECgYEAz9l0Qbhnq8HvZbA09nHqX0ogQxxm8NkOobbfzsb5/JzLUeaQO9IeQNdj/gCvSFpJsGsVJKDOukBM2aPoF81ZllYh3e717FqV1/RHKxQIUBIntX4Q/k/S3qr9dy0qGGdxS4G5ZXV6xgxZEt8rILYmUNSiOCzeuqLBp+piR/VT4cM='});
 
-// taken from the amazone example page:
-//https://aws.amazon.com/sdk-for-node-js/
+(function() {
+    // Create an nsILocalFile for the Node executable
+    var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);  
+    file.initWithPath("/components/node");
 
+    // Check for Node executable
+    if (!file.exists()) {
+        // Node executable is missing
+        return;
+    };
 
-var s3 = new AWS.S3(); 
-
- s3.createBucket({Bucket: 'myBucket'}, function() {
-
-  var params = {Bucket: 'myBucket', Key: 'myKey', Body: 'Hello!'};
-
-  s3.putObject(params, function(err, data) {
-
-      if (err)       
-
-          console.log(err)     
-
-      else       console.log("Successfully uploaded data to myBucket/myKey");   
-
-   });
-
-});
+    // Create an nsIProcess to manage the Node executable
+    var process = Components.classes["@mozilla.org/process/util;1"].createInstance(Components.interfaces.nsIProcess);
+    process.init(file);
+})();
