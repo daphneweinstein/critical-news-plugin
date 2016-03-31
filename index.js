@@ -1,3 +1,5 @@
+import * as AWS from "aws-sdk-2.2.48.min"
+
 var self = require("sdk/self");
 
 var buttons = require('sdk/ui/button/action');
