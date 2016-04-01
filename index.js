@@ -16,7 +16,7 @@ var button = buttons.ActionButton({
 });
 
 function handleClick(state) {
-  tabs.open("http://www.mozilla.org/");
+  tabs.open("localhost:5000");
 }
 //ZOMGsocool
 function dummy(text, callback) {
@@ -24,20 +24,3 @@ function dummy(text, callback) {
 }
 
 exports.dummy = dummy;
-
-
-(function() {
-    // Create an nsILocalFile for the Node executable
-    var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);  
-    file.initWithPath("/components/node");
-
-    // Check for Node executable
-    if (!file.exists()) {
-        // Node executable is missing
-        return;
-    };
-
-    // Create an nsIProcess to manage the Node executable
-    var process = Components.classes["@mozilla.org/process/util;1"].createInstance(Components.interfaces.nsIProcess);
-    process.init(file);
-})();
