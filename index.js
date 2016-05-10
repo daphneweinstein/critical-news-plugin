@@ -25,7 +25,7 @@ function handleClick(state) {
   //http://stackoverflow.com/questions/11594576/getting-current-browser-url-in-firefox-addon
 var idea = URL(tabs.activeTab.url);
   // console.log(idea);
-tabs.open( "localhost:5000/" + idea);
+tabs.open( "10.8.125.173:5000/" + idea);
 }
 //ZOMGsocool
 function dummy(text, callback) {
