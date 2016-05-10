@@ -5,12 +5,12 @@ var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
 //var thing = 'document.body.innerHTML = "<h1>localhost:5000</h1>";'
 var button = buttons.ActionButton({
-  id: "mozilla-link",
-  label: "Visit Mozilla",
+  id: "criticalnews-link",
+  label: "Visit Critical NewsBot",
   icon: {
-    "16": "./icon-16.png",
-    "32": "./icon-32.png",
-    "64": "./icon-64.png"
+    "16": "./icon16two.png",
+    "32": "./icon32.png",
+    "64": "./icon64.png"
   },
   onClick: handleClick
 });
