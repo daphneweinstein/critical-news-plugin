@@ -1,4 +1,10 @@
 
+
+// This based heavily on code from:
+// https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Adding_a_Button_to_the_Toolbar
+// which is just their demo for building a one-click app. Most of that code lingers around in this file;
+// we essentially just changed the images and are redirecting to a different webpage
+
 var self = require("sdk/self");
 var URL = require('sdk/url').URL;
 var buttons = require('sdk/ui/button/action');

@@ -8,7 +8,7 @@ var button = buttons.ActionButton({
   id: "criticalnews-link",
   label: "Visit Critical NewsBot",
   icon: {
-    "16": "./icon16.png",
+    "16": "./icon16two.png",
     "32": "./icon32.png",
     "64": "./icon64.png"
   },
