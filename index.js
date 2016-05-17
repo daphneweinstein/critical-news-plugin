@@ -20,6 +20,7 @@ function handleClick(state) {
 var idea = URL(tabs.activeTab.url);
   // console.log(idea);
 tabs.open( "localhost:5000/" + idea);
+//tabs.open( "https://newsbot-1-1.herokuapp.com/" + idea);
 }
 //ZOMGsocool
 function dummy(text, callback) {
