@@ -23,14 +23,10 @@ var button = buttons.ActionButton({
 
 function handleClick(state) {
   //http://stackoverflow.com/questions/11594576/getting-current-browser-url-in-firefox-addon
-var idea = URL(tabs.activeTab.url);
-  // console.log(idea);
-<<<<<<< HEAD
-tabs.open( "localhost:5000/" + idea);
-//tabs.open( "https://newsbot-1-1.herokuapp.com/" + idea);
-=======
-tabs.open( "10.8.125.173:5000/" + idea);
->>>>>>> ea901c3d498c50991559a6cd2b01413aee04689b
+  var idea = URL(tabs.activeTab.url);
+    // console.log(idea);
+  tabs.open( "https://newsbot-1-3.herokuapp.com/" + idea);
+  //tabs.open( "https://newsbot-1-1.herokuapp.com/" + idea);
 }
 //ZOMGsocool
 function dummy(text, callback) {
